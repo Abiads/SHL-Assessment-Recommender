@@ -1,4 +1,4 @@
-# 🚀 SHL Assessment Recommender 🚀
+# 🚀 TalentLens 🚀
 
 ![Status](https://img.shields.io/badge/status-operational-brightgreen)
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
@@ -79,3 +79,4 @@ AI-driven recommender that scrapes SHL's catalog, embeds descriptions via NLP, r
 * 80% reduction in HR effort
 * Globally scalable
 * Revolutionary hiring optimization
+
