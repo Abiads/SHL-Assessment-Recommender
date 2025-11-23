@@ -7,7 +7,6 @@
 **Note:** For the best experience with the Streamlit demo, we recommend viewing it in a browser with dark mode enabled.
 
 ## Overview
-
 TalentLens is an AI-powered recommendation engine designed to streamline the process of selecting SHL assessments for specific job roles. By leveraging natural language processing and semantic search, it helps HR professionals quickly identify the most relevant tests from SHL's extensive catalog, reducing manual effort and improving hiring efficiency.
 
 ### The Challenge
@@ -19,7 +18,7 @@ TalentLens addresses this by automating the discovery process: it scrapes SHL's 
 ## Technology Stack
 - **Backend:** FastAPI with Uvicorn for robust API handling
 - **AI and Machine Learning:** ChromaDB for vector storage and retrieval, Sentence-Transformers for embedding generation
-- **Natural Language Processing:** Cohere API for generating concise insights
+- **Natural Language Processing:** Gemini API for generating concise insights
 - **Data Scraping:** BeautifulSoup and Requests for reliable web extraction
 - **Frontend:** Streamlit for an intuitive user interface
 - **Deployment:** Render for API hosting and Streamlit Cloud for the demo application
@@ -30,7 +29,7 @@ The system follows a structured pipeline to ensure reliable and scalable perform
 1. **Data Collection:** We scrape SHL's website to gather assessment details and store them in a structured JSON format (handled in `scraper.py`).
 2. **Vector Database Setup:** Descriptions are transformed into embeddings and persisted in ChromaDB for efficient querying (via `rag.py`).
 3. **API Processing:** User-submitted job descriptions are analyzed to retrieve and rank relevant assessments (in `api.py`).
-4. **Insight Generation:** The Cohere API evaluates the top matches to produce summaries on key skills, job level suitability, and practical usage advice.
+4. **Insight Generation:** The Gemini API evaluates the top matches to produce summaries on key skills, job level suitability, and practical usage advice.
 5. **User Interface:** The frontend accepts job descriptions as input and presents ranked recommendations with embedded insights and tips.
 
 ## Workflow
@@ -62,7 +61,7 @@ graph TB
     
     %% INSIGHTS %%
     Row4B --> InsightPhase[AI INSIGHTS PHASE]
-    InsightPhase --> Row5A[Send to Cohere API]
+    InsightPhase --> Row5A[Send to Gemini API]
     InsightPhase --> Row5B[Generate AI Insights]
     Row5A --> End[Display Results]
     Row5B --> End
@@ -140,4 +139,5 @@ Explore the full user interface via our hosted Streamlit app:
 
 ## Business Impact
 This tool has the potential to cut HR assessment selection time by up to 80%, enabling faster and more accurate hiring decisions. Its cloud-based architecture supports scalability, positioning it as a valuable asset for optimizing talent acquisition workflows.
+
 
