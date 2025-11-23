@@ -128,11 +128,16 @@ Explore the full user interface via our hosted Streamlit app:
 [https://shl-assessment-recommendor-v75xtfd7tsh3rxqucbedlk.streamlit.app/](https://shl-assessment-recommendor-v75xtfd7tsh3rxqucbedlk.streamlit.app/)
 
 ## Screenshots
-![Screenshot from 2025-04-23 19-25-02](https://github.com/user-attachments/assets/1d0fba8d-a9c9-452a-866c-074d5f5f54f9)  
-![Screenshot from 2025-04-23 19-26-32](https://github.com/user-attachments/assets/d5096379-bf9e-4c70-a8c5-73bb12d71a45)  
-![Screenshot from 2025-04-23 19-26-35](https://github.com/user-attachments/assets/b46750a5-1e9e-4812-834b-54eff022ea7d)  
-![Screenshot from 2025-04-23 19-26-40](https://github.com/user-attachments/assets/a34065b3-447d-4218-8ee5-f73a0bc0ef8c)  
-![Screenshot from 2025-04-23 19-26-47](https://github.com/user-attachments/assets/b899facc-9169-45e1-b431-7070dbdcba7c)
+<img width="2878" height="1460" alt="Screenshot 2025-11-23 120430" src="https://github.com/user-attachments/assets/94a10fb1-1dda-4dc5-829c-7cafc8eca3dc" />
+<img width="2876" height="1457" alt="Screenshot 2025-11-23 120440" src="https://github.com/user-attachments/assets/40871871-fc0f-40cd-9386-b487a26d1b93" />
+<img width="2879" height="1462" alt="Screenshot 2025-11-23 120505" src="https://github.com/user-attachments/assets/235d1fea-9bcf-4764-b97d-a9c00867261f" />
+<img width="2872" height="1467" alt="Screenshot 2025-11-23 120514" src="https://github.com/user-attachments/assets/1caff11f-f8da-44ea-80fd-0011ef4c0fde" />
+<img width="2875" height="1463" alt="Screenshot 2025-11-23 120533" src="https://github.com/user-attachments/assets/af5ff160-f567-465a-92a8-8be9df84cb70" />
+<img width="2879" height="1447" alt="Screenshot 2025-11-23 120553" src="https://github.com/user-attachments/assets/308f0a42-61d3-4a79-81b7-1a6dc9c76624" />
+<img width="2877" height="1460" alt="Screenshot 2025-11-23 120612" src="https://github.com/user-attachments/assets/183a73cc-1e76-48e1-8c9f-af97ae948532" />
+<img width="2857" height="1618" alt="Screenshot 2025-11-23 120749" src="https://github.com/user-attachments/assets/e793e33b-9887-409d-9516-cf20b608f40c" />
+
 
 ## Business Impact
-This tool has the potential to cut HR assessment selection time by up to 80%, enabling faster and more accurate hiring decisions. Its cloud-based architecture supports global scalability, positioning it as a valuable asset for optimizing talent acquisition workflows.
+This tool has the potential to cut HR assessment selection time by up to 80%, enabling faster and more accurate hiring decisions. Its cloud-based architecture supports scalability, positioning it as a valuable asset for optimizing talent acquisition workflows.
+
