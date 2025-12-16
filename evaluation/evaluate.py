@@ -10,7 +10,7 @@ import time
 
 # Configuration
 API_URL = "https://shl-assessment-recommender-8awb.onrender.com/recommend"
-TRAIN_DATA_PATH = "../Gen_AI Dataset.xlsx"
+TRAIN_DATA_PATH = "../data/Gen_AI Dataset.xlsx"
 
 def load_train_data() -> pd.DataFrame:
     """Load training data from Excel file"""

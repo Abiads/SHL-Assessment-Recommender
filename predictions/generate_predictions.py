@@ -10,7 +10,7 @@ import time
 
 # Configuration
 API_URL = "https://shl-assessment-recommender-8awb.onrender.com/recommend"
-TEST_DATA_PATH = "../Gen_AI Dataset.xlsx"
+TEST_DATA_PATH = "../data/Gen_AI Dataset.xlsx"
 OUTPUT_CSV = "abhay_gupta.csv"
 
 def load_test_data() -> pd.DataFrame:
