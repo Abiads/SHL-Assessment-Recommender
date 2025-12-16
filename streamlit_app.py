@@ -182,21 +182,35 @@ with st.expander("How to Use This Application", expanded=False):
         st.markdown("""
         <div class="example-box">
             <strong>Example 1:</strong><br>
-            "Senior software engineer with 5+ years experience in Python and cloud technologies"
+            "Senior Java developer with strong team collaboration and stakeholder management skills"
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("""
         <div class="example-box">
             <strong>Example 2:</strong><br>
-            "Entry-level customer service representative with strong communication skills"
+            "Mid-level data analyst proficient in Python, SQL, and data visualization tools"
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("""
         <div class="example-box">
             <strong>Example 3:</strong><br>
-            "Financial analyst position requiring analytical thinking and Excel proficiency"
+            "Entry-level customer service representative with excellent communication and problem-solving abilities"
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="example-box">
+            <strong>Example 4:</strong><br>
+            "Project manager with 5+ years experience in agile methodologies and cross-functional team leadership"
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="example-box">
+            <strong>Example 5:</strong><br>
+            "Financial analyst requiring strong analytical thinking, Excel proficiency, and attention to detail"
         </div>
         """, unsafe_allow_html=True)
     
@@ -263,7 +277,7 @@ with st.sidebar:
 # Main Content
 query = st.text_input(
     "Describe the role:",
-    placeholder="e.g. 'Mid-level account manager with client experience'"
+    placeholder="e.g., 'Senior software engineer with expertise in cloud architecture and team leadership'"
 )
 
 if st.button("Find Assessments", type="primary") and query:
