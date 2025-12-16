@@ -17,7 +17,7 @@ def load_test_data() -> pd.DataFrame:
     """Load test data from Excel file"""
     try:
         # Try to read the test sheet
-        df = pd.read_excel(TEST_DATA_PATH, sheet_name='Test')
+        df = pd.read_excel(TEST_DATA_PATH, sheet_name='Test-Set')
         print(f"✅ Loaded {len(df)} test queries")
         return df
     except Exception as e:

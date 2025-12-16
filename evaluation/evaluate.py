@@ -16,7 +16,7 @@ def load_train_data() -> pd.DataFrame:
     """Load training data from Excel file"""
     try:
         # Try to read the train sheet
-        df = pd.read_excel(TRAIN_DATA_PATH, sheet_name='Train')
+        df = pd.read_excel(TRAIN_DATA_PATH, sheet_name='Train-Set')
         print(f"✅ Loaded {len(df)} training examples")
         return df
     except Exception as e:
