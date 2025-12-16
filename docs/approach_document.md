@@ -255,13 +255,10 @@ The system successfully transforms a manual, time-consuming process into an inte
 
 ---
 
-**GitHub Repository:** [TO BE FILLED]  
-**Live Demo:** [TO BE FILLED]  
-**API Endpoint:** [TO BE FILLED]
+**GitHub Repository:** https://github.com/Abiads/SHL-Assessment-Recommender  
+**Live Demo:** https://shl-assessment-recommender-updated.streamlit.app/  
+**API Endpoint:** https://shl-assessment-recommender-8awb.onrender.com
 
 ---
 
-**Note:** This is a template. Please fill in:
-1. Evaluation metrics after running `evaluation/evaluate.py`
-2. Deployment URLs after hosting
-3. Any additional optimizations you discover
+**Note:** Please fill in evaluation metrics after running `evaluation/evaluate.py` against the deployed API.

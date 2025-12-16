@@ -9,7 +9,7 @@ from typing import List, Dict
 import time
 
 # Configuration
-API_URL = "http://localhost:8000/recommend"
+API_URL = "https://shl-assessment-recommender-8awb.onrender.com/recommend"
 TRAIN_DATA_PATH = "../Gen_AI Dataset.xlsx"
 
 def load_train_data() -> pd.DataFrame:
@@ -168,7 +168,7 @@ def main():
     
     # Check if API is running
     try:
-        health_response = requests.get("http://localhost:8000/health", timeout=5)
+        health_response = requests.get("https://shl-assessment-recommender-8awb.onrender.com/health", timeout=5)
         if health_response.status_code == 200:
             print("✅ API is running and healthy\n")
         else:
@@ -176,8 +176,7 @@ def main():
             return
     except Exception as e:
         print(f"❌ Cannot connect to API at {API_URL}")
-        print("Please start the API server first:")
-        print("   uvicorn app.api:app --reload")
+        print("Please ensure the API is deployed and accessible")
         return
     
     # Load train data
