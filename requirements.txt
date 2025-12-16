@@ -19,6 +19,7 @@ pydantic             # Data validation
 tqdm                  # Progress bars for scraping
 numpy                  # For embeddings
 python-dotenv         # For API keys (`.env`)
+openpyxl              # For reading Excel files
 
 
 streamlit-lottie 
