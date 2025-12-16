@@ -74,14 +74,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.title("🎯 SHL Assessment Recommender")
+st.title("SHL Assessment Recommender")
 st.caption("Intelligent matching for talent acquisition professionals")
 
 # Add Instructions Section at the top
-with st.expander("📖 How to Use This Application", expanded=False):
+with st.expander("How to Use This Application", expanded=False):
     st.markdown("""
     <div class="instruction-card">
-        <h3>🚀 Getting Started</h3>
+        <h3>Getting Started</h3>
         <p>This AI-powered tool helps you find the most relevant SHL assessments for your hiring needs. Simply describe the role or paste a job description URL, and get instant recommendations.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -89,7 +89,7 @@ with st.expander("📖 How to Use This Application", expanded=False):
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 💡 Input Methods")
+        st.markdown("### Input Methods")
         st.markdown("""
         <div class="tip-box">
             <strong>Method 1: Text Description</strong><br>
@@ -111,7 +111,7 @@ with st.expander("📖 How to Use This Application", expanded=False):
         """, unsafe_allow_html=True)
     
     with col2:
-        st.markdown("### ✨ Example Prompts")
+        st.markdown("### Example Prompts")
         
         st.markdown("""
         <div class="example-box">
@@ -136,7 +136,7 @@ with st.expander("📖 How to Use This Application", expanded=False):
     
     st.markdown("---")
     
-    st.markdown("### 🎯 Best Practices for Optimal Results")
+    st.markdown("### Best Practices for Optimal Results")
     
     tips_col1, tips_col2, tips_col3 = st.columns(3)
     
@@ -166,7 +166,7 @@ with st.expander("📖 How to Use This Application", expanded=False):
     
     st.markdown("---")
     
-    st.markdown("### 📊 Understanding Results")
+    st.markdown("### Understanding Results")
     st.markdown("""
     - **Relevance Score**: Ranges from 0.0 (perfect match) to 1.0 (less relevant). Lower scores indicate better matches.
     - **AI Insights**: When enabled, provides expert analysis on key skills measured, ideal candidate level, and best use cases.
@@ -175,10 +175,10 @@ with st.expander("📖 How to Use This Application", expanded=False):
 
 # Sidebar
 with st.sidebar:
-    st.header("⚙️ Configuration")
+    st.header("Configuration")
     use_ai = st.toggle("Enable AI Insights", value=True)
     
-    with st.expander("🔧 Advanced Settings"):
+    with st.expander("Advanced Settings"):
         api_url = st.text_input(
             "API Endpoint",
             value="https://shl-assessment-recommender-8awb.onrender.com/recommend",
@@ -186,22 +186,22 @@ with st.sidebar:
     
     st.markdown("---")
     st.markdown("""
-    **📊 Interpretation Guide**
+    **Interpretation Guide**
     - **Relevance Score**: Lower is better (0.0 = perfect match)
     - **Support Icons**: 
-      - 🟢 = Supported 
-      - 🔴 = Not Supported 
-      - ❓ = Unknown
+      - [YES] = Supported 
+      - [NO] = Not Supported 
+      - [N/A] = Unknown
     """)
 
 # Main Content
 query = st.text_input(
-    "🔍 Describe the role:",
+    "Describe the role:",
     placeholder="e.g. 'Mid-level account manager with client experience'"
 )
 
 if st.button("Find Assessments", type="primary") and query:
-    with st.spinner("🔍 Finding optimal assessments..."):
+    with st.spinner("Finding optimal assessments..."):
         try:
             response = requests.post(
                 api_url,
@@ -212,7 +212,7 @@ if st.button("Find Assessments", type="primary") and query:
             if not response:
                 st.warning("No assessments found. Try different keywords.")
             else:
-                st.success(f"🎉 Found {len(response)} matching assessments")
+                st.success(f"Found {len(response)} matching assessments")
                 
                 for item in sorted(response, key=lambda x: x['score']):
                     # Safely handle all fields with defaults
@@ -248,13 +248,13 @@ if st.button("Find Assessments", type="primary") and query:
                             with cols[1]:
                                 st.markdown(f'<div class="detail-value">{value}</div>', unsafe_allow_html=True)
                         
-                        detail_row("🔗 URL:", f'<a href="{url}" target="_blank">View Assessment</a>')
-                        detail_row("⏱ Duration:", duration)
-                        detail_row("🗣 Languages:", languages)
-                        detail_row("📊 Job Level:", job_level)
-                        detail_row("🏠 Remote Testing:", f'<span class="support-icon">{remote_testing}</span>')
-                        detail_row("🔄 Adaptive/IRT:", f'<span class="support-icon">{adaptive_support}</span>')
-                        detail_row("🧪 Test Type:", test_type)
+                        detail_row("URL:", f'<a href="{url}" target="_blank">View Assessment</a>')
+                        detail_row("Duration:", duration)
+                        detail_row("Languages:", languages)
+                        detail_row("Job Level:", job_level)
+                        detail_row("Remote Testing:", f'<span class="support-icon">{remote_testing}</span>')
+                        detail_row("Adaptive/IRT:", f'<span class="support-icon">{adaptive_support}</span>')
+                        detail_row("Test Type:", test_type)
                         
                         # Description
                         st.markdown("---")
@@ -264,7 +264,7 @@ if st.button("Find Assessments", type="primary") and query:
                         # AI Insights
                         if ai_insights:
                             st.markdown('<div class="ai-insights">', unsafe_allow_html=True)
-                            st.markdown("**🤖 AI Analysis:**")
+                            st.markdown("**AI Analysis:**")
                             for line in ai_insights.split('\n'):
                                 if line.strip():
                                     st.markdown(f"• {line.strip()}")
@@ -273,7 +273,7 @@ if st.button("Find Assessments", type="primary") and query:
                         st.markdown('</div>', unsafe_allow_html=True)
                         
         except Exception as e:
-            st.error(f"⚠️ Error: {str(e)}")
+            st.error(f"Error: {str(e)}")
             st.info("Please ensure the API is running at the specified endpoint")
 
 # Footer
@@ -282,8 +282,8 @@ st.markdown("""
     <div style='text-align: center; color: #888;'>
         <p>SHL Assessment Recommender | Professional Edition</p>
         <p>Created by <strong>Abhay Gupta</strong> | 
-        <a href='https://www.abhaygupta6187.me/' target='_blank' style='color: #4CAF50;'>🌐 Website</a> | 
-        <a href='https://www.linkedin.com/in/abhay-gupta-197b17264/' target='_blank' style='color: #0077B5;'>💼 LinkedIn</a>
+        <a href='https://www.abhaygupta6187.me/' target='_blank' style='color: #4CAF50;'>Website</a> | 
+        <a href='https://www.linkedin.com/in/abhay-gupta-197b17264/' target='_blank' style='color: #0077B5;'>LinkedIn</a>
         </p>
     </div>
 """, unsafe_allow_html=True)
