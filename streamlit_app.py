@@ -275,9 +275,45 @@ with st.sidebar:
     """)
 
 # Main Content
-query = st.text_input(
-    "Describe the role:",
-    placeholder="e.g., 'Senior software engineer with expertise in cloud architecture and team leadership'"
+st.markdown("### Search for Assessments")
+
+# Example selector
+example_queries = [
+    "-- Select an example or type your own --",
+    "Senior Java developer with strong team collaboration and stakeholder management skills",
+    "Mid-level data analyst proficient in Python, SQL, and data visualization tools",
+    "Entry-level customer service representative with excellent communication and problem-solving abilities",
+    "Project manager with 5+ years experience in agile methodologies and cross-functional team leadership",
+    "Financial analyst requiring strong analytical thinking, Excel proficiency, and attention to detail",
+    "Software architect with expertise in microservices and cloud-native applications",
+    "Marketing manager with digital marketing and campaign management experience",
+    "HR specialist with talent acquisition and employee relations skills"
+]
+
+col1, col2 = st.columns([3, 1])
+with col1:
+    selected_example = st.selectbox(
+        "Quick Examples:",
+        example_queries,
+        index=0,
+        help="Select an example query or type your own below"
+    )
+
+with col2:
+    if st.button("Use Example", type="secondary", disabled=(selected_example == example_queries[0])):
+        st.session_state.query = selected_example
+
+# Initialize session state for query
+if 'query' not in st.session_state:
+    st.session_state.query = ""
+
+# Text input for custom query
+query = st.text_area(
+    "Or describe the role:",
+    value=st.session_state.query if selected_example == example_queries[0] else selected_example,
+    placeholder="e.g., 'Senior software engineer with expertise in cloud architecture and team leadership'",
+    height=100,
+    help="Describe the job role, required skills, and experience level"
 )
 
 if st.button("Find Assessments", type="primary") and query:
