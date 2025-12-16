@@ -34,7 +34,7 @@ def create_vector_db():
     print(f"✅ Found JSON data at: {json_path}")
 
     # Load and validate data
-    with open(json_path, "r") as f:
+    with open(json_path, "r", encoding="utf-8", errors="ignore") as f:
         assessments = json.load(f)
         if not isinstance(assessments, list):
             raise ValueError("JSON data should be a list of assessments")

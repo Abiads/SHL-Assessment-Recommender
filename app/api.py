@@ -15,7 +15,7 @@ load_dotenv(dotenv_path=env_path)
 
 # Initialize Gemini directly (not via LangChain to avoid auth issues)
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-llm = genai.GenerativeModel('gemini-2.0-flash')
+llm = genai.GenerativeModel('gemini-2.5-flash')
 
 
 app = FastAPI()
@@ -33,6 +33,14 @@ chroma_client = chromadb.PersistentClient(path="app/chroma_db")
 class QueryRequest(BaseModel):
     text: str
     use_ai: bool = True
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint to verify API is running"""
+    return {
+        "status": "healthy",
+        "message": "SHL Assessment Recommender API is running"
+    }
 
 def scrape_job_description(url: str) -> str:
     try:

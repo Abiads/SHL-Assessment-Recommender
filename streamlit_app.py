@@ -278,4 +278,12 @@ if st.button("Find Assessments", type="primary") and query:
 
 # Footer
 st.markdown("---")
-st.caption("SHL Assessment Recommender | Professional Edition")
+st.markdown("""
+    <div style='text-align: center; color: #888;'>
+        <p>SHL Assessment Recommender | Professional Edition</p>
+        <p>Created by <strong>Abhay Gupta</strong> | 
+        <a href='https://www.abhaygupta6187.me/' target='_blank' style='color: #4CAF50;'>🌐 Website</a> | 
+        <a href='https://www.linkedin.com/in/abhay-gupta-197b17264/' target='_blank' style='color: #0077B5;'>💼 LinkedIn</a>
+        </p>
+    </div>
+""", unsafe_allow_html=True)

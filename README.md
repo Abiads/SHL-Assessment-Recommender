@@ -17,6 +17,16 @@
 ### 🔹 **Live Demo (Streamlit App)**  
 👉 https://talentlens-cimdbqsshfd37ja45o6mke.streamlit.app/
 
+## 👨‍💻 Creator
+
+**Abhay Gupta**
+- 🌐 Website: [abhaygupta6187.me](https://www.abhaygupta6187.me/)
+- 💼 LinkedIn: [Abhay Gupta](https://www.linkedin.com/in/abhay-gupta-197b17264/)
+
+*This project is a customized implementation of the SHL Assessment Recommender for the SHL AI Intern assignment.*
+
+---
+
 ## Overview
 TalentLens is an AI-powered recommendation engine designed to streamline the process of selecting SHL assessments for specific job roles. By leveraging natural language processing and semantic search, it helps HR professionals quickly identify the most relevant tests from SHL's extensive catalog, reducing manual effort and improving hiring efficiency.
 
