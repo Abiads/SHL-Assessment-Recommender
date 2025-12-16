@@ -11,64 +11,130 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for basic styling
+# Custom CSS for enhanced styling
 st.markdown("""
 <style>
+    /* Main container styling */
+    .main {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+    }
+    
+    /* Assessment card with modern design */
     .assessment-card {
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        background: #2d3a3a;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        border-left: 4px solid #4CAF50;
-    }
-    .relevance-badge {
-        background: #1e3a1e;
-        color: #8bc34a;
-        padding: 0.25rem 0.75rem;
         border-radius: 12px;
-        font-weight: 600;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(145deg, #2d3a3a, #1a2525);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        border-left: 5px solid #4CAF50;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
+    .assessment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(76, 175, 80, 0.3);
+    }
+    
+    /* Relevance badge with gradient */
+    .relevance-badge {
+        background: linear-gradient(135deg, #1e3a1e, #2d5a2d);
+        color: #8bc34a;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(139, 195, 74, 0.3);
+    }
+    
+    /* AI insights with modern styling */
     .ai-insights {
-        background: #2a3535;
-        padding: 1rem;
-        border-radius: 6px;
-        margin-top: 1rem;
-        border-left: 3px solid #607d8b;
+        background: linear-gradient(135deg, #2a3535, #1f2828);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        border-left: 4px solid #607d8b;
+        box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
     }
+    
+    /* Detail rows with better spacing */
     .detail-container {
         display: flex;
-        margin: 0.5rem 0;
+        margin: 0.75rem 0;
+        padding: 0.5rem;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.02);
     }
+    
     .detail-label {
-        font-weight: 600;
+        font-weight: 700;
         color: #a8c7cb;
-        min-width: 120px;
+        min-width: 140px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
     }
+    
     .detail-value {
         color: #ffffff;
+        font-size: 0.95rem;
     }
+    
+    /* Progress indicator */
+    .progress-step {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        color: white;
+        border-radius: 25px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    }
+    
+    .progress-step.completed {
+        background: linear-gradient(135deg, #2196F3, #1976D2);
+    }
+    
+    /* Instruction cards */
     .instruction-card {
-        background: #1e2a2a;
+        background: linear-gradient(145deg, #1e2a2a, #2d3a3a);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-left: 5px solid #2196F3;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Example and tip boxes */
+    .example-box, .tip-box {
+        background: linear-gradient(145deg, #252f2f, #1a2424);
+        padding: 1rem;
         border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-left: 4px solid #2196F3;
-    }
-    .example-box {
-        background: #252f2f;
-        padding: 0.75rem;
-        border-radius: 6px;
-        margin: 0.5rem 0;
+        margin: 0.75rem 0;
         font-family: 'Courier New', monospace;
-        border-left: 3px solid #4CAF50;
+        border-left: 4px solid #4CAF50;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
+    
     .tip-box {
-        background: #2a2520;
-        padding: 0.75rem;
-        border-radius: 6px;
-        margin: 0.5rem 0;
-        border-left: 3px solid #FF9800;
+        border-left: 4px solid #FF9800;
+    }
+    
+    /* Success checkmark */
+    .checkmark {
+        color: #4CAF50;
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+    
+    /* Header styling */
+    h1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -201,6 +267,16 @@ query = st.text_input(
 )
 
 if st.button("Find Assessments", type="primary") and query:
+    # Progress indicator
+    progress_container = st.container()
+    with progress_container:
+        st.markdown("""
+        <div style='text-align: center; padding: 1rem;'>
+            <span class='progress-step completed'>✓ Query Received</span>
+            <span class='progress-step'>→ Analyzing...</span>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with st.spinner("Finding optimal assessments..."):
         try:
             response = requests.post(
@@ -209,12 +285,38 @@ if st.button("Find Assessments", type="primary") and query:
                 timeout=120
             ).json()
 
+            # Update progress
+            progress_container.empty()
+            with progress_container:
+                st.markdown("""
+                <div style='text-align: center; padding: 1rem;'>
+                    <span class='progress-step completed'>✓ Query Received</span>
+                    <span class='progress-step completed'>✓ Analysis Complete</span>
+                    <span class='progress-step completed'>✓ Results Ready</span>
+                </div>
+                """, unsafe_allow_html=True)
+
             if not response:
                 st.warning("No assessments found. Try different keywords.")
             else:
                 st.success(f"Found {len(response)} matching assessments")
                 
-                for item in sorted(response, key=lambda x: x['score']):
+                # Results summary
+                st.markdown(f"""
+                <div style='background: linear-gradient(135deg, #1e3a1e, #2d5a2d); 
+                            padding: 1rem; border-radius: 10px; margin: 1rem 0;
+                            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);'>
+                    <h3 style='color: #8bc34a; margin: 0;'>
+                        <span class='checkmark'>✓</span>
+                        {len(response)} Relevant Assessments Found
+                    </h3>
+                    <p style='color: #a8c7cb; margin: 0.5rem 0 0 0;'>
+                        Sorted by relevance score (lower is better)
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                for idx, item in enumerate(sorted(response, key=lambda x: x['score']), 1):
                     # Safely handle all fields with defaults
                     name = item.get('name', 'Unknown Assessment')
                     url = item.get('url', '#')
@@ -228,16 +330,30 @@ if st.button("Find Assessments", type="primary") and query:
                     description = item.get('description', 'No description available')
                     ai_insights = item.get('ai_insights', '') if use_ai else ''
                     
+                    # Rank badge color based on position
+                    rank_color = '#4CAF50' if idx <= 3 else '#2196F3' if idx <= 6 else '#607d8b'
+                    
                     # Create assessment card using Streamlit components
                     with st.container():
                         st.markdown('<div class="assessment-card">', unsafe_allow_html=True)
                         
-                        # Header row
-                        col1, col2 = st.columns([4, 1])
+                        # Header row with rank badge
+                        col1, col2, col3 = st.columns([1, 6, 2])
                         with col1:
-                            st.subheader(name)
+                            st.markdown(f"""
+                            <div style='background: {rank_color}; color: white; 
+                                        padding: 0.5rem; border-radius: 50%; 
+                                        width: 50px; height: 50px; 
+                                        display: flex; align-items: center; 
+                                        justify-content: center; font-weight: bold;
+                                        font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);'>
+                                #{idx}
+                            </div>
+                            """, unsafe_allow_html=True)
                         with col2:
-                            st.markdown(f'<span class="relevance-badge">Relevance: {score:.3f}</span>', 
+                            st.subheader(name)
+                        with col3:
+                            st.markdown(f'<span class="relevance-badge">Score: {score:.3f}</span>', 
                                       unsafe_allow_html=True)
                         
                         # Details using columns for layout
