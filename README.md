@@ -15,7 +15,7 @@
 </a>
 
 ### 🔹 **Live Demo (Streamlit App)**  
-👉 https://talentlens-cimdbqsshfd37ja45o6mke.streamlit.app/
+👉 [https://shl-assessment-recommender-updated.streamlit.app/](https://shl-assessment-recommender-updated.streamlit.app/)
 
 ## 👨‍💻 Creator
 
@@ -124,7 +124,7 @@ During implementation, we encountered a few hurdles and addressed them as follow
 ### API Access
 The recommendation endpoint is live and ready for integration.
 
-**Endpoint URL:** [https://shl-assessment-recommendor.onrender.com/recommend](https://shl-assessment-recommendor.onrender.com/recommend)
+**Endpoint URL:** [[https://shl-assessment-recommendor.onrender.com/recommend](https://shl-assessment-recommender-8awb.onrender.com/)]
 
 **Example Request (JSON):**
 ```json
@@ -160,6 +160,7 @@ Explore the full user interface via our hosted Streamlit app:
 
 ## Business Impact
 This tool has the potential to cut HR assessment selection time by up to 80%, enabling faster and more accurate hiring decisions. Its cloud-based architecture supports scalability, positioning it as a valuable asset for optimizing talent acquisition workflows.
+
 
 
 
